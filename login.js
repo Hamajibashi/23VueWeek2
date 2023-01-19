@@ -13,12 +13,9 @@ const app = {
     },
     methods: {
         login() {
-            console.log(this.userData);
             axios.post(`${baseUrl}/v2/admin/signin`, this.userData)
                 .then(res => {
-                    console.log(res.data);
                     const { token, expired } = res.data;
-                    console.log(token, expired);
                     document.cookie = `hexschool=${token}; expires=${expired};`;
                     window.location = "./products.html";
                 })

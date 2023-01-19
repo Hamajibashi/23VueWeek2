@@ -24,9 +24,7 @@ const app = {
         getProductsData() {
             axios.get(`${baseUrl}/v2/api/${api_path}/admin/products`)
                 .then(res => {
-                    console.log(res.data);
                     this.products = res.data.products;
-                    console.log(this.products);
                 })
                 .catch(err => {
                     console.log(err);
