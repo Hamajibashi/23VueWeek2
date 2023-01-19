@@ -20,7 +20,7 @@ const app = {
                     window.location = "./products.html";
                 })
                 .catch(err => {
-                    console.log(err);
+                    alert(err.data.message);
                 })
         }
     }
